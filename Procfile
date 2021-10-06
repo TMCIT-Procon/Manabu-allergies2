@@ -1,1 +1,1 @@
-web: flask run
+web: gunicorn front/app:app --log-file=-

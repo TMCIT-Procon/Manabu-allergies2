@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
-app=Flask("mana_alle")
-
+app=Flask(__name__)
+print(app.template_folder)
 @app.route("/")
 def index():
-    return "<h1>このページはいつも通りゴミページです。</h1>"
+    return render_template("index.html")
 
 @app.errorhandler(404)
 def not_found(error):
